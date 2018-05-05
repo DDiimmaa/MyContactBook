@@ -9,7 +9,6 @@ import { MenuComponent } from './app.menu-component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     ContactListComponent,
     EditContactComponent,
     ContactViewComponent,
@@ -19,7 +18,6 @@ import { MenuComponent } from './app.menu-component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent,ContactListComponent,EditContactComponent,ContactViewComponent,
-    MenuComponent]
+  bootstrap: [ContactListComponent]
 })
 export class AppModule { }
