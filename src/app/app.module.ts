@@ -1,23 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { ContactListComponent } from './app.contact-list-component';
-import { EditContactComponent } from './app.edit-contact-component';
-import { ContactViewComponent } from './app.contact-view-component';
-import { MenuComponent } from './app.menu-component';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { ContactCardComponent } from './contact-card/contact-card.component';
+import { MainContentComponent } from './main-content/main-content.component';
+import { CategorySelectorComponent } from './category-selector/category-selector.component';
+import { SearchContactComponent } from './search-contact/search-contact.component';
+import { BirthdaySelectorComponent } from './birthday-selector/birthday-selector.component';
+import { MenuFiltersComponent } from './menu-filters/menu-filters.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactFullViewComponent } from './contact-full-view/contact-full-view.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     ContactListComponent,
-    EditContactComponent,
-    ContactViewComponent,
-    MenuComponent
+    SideBarComponent,
+    ContactCardComponent,
+    MainContentComponent,
+    CategorySelectorComponent,
+    SearchContactComponent,
+    BirthdaySelectorComponent,
+    MenuFiltersComponent,
+    ContactFormComponent,
+    ContactFullViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // RouterModule.forRoot([
+    //   { path: "", component: ContactListComponent },
+    //   { path: "/edit", component: ContactFormComponent },
+    //   { path: "/details", component: ContactFullViewComponent }
+    // ])
   ],
   providers: [],
-  bootstrap: [ContactListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

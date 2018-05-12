@@ -1,3 +1,0 @@
-interface OnInit {
-    ngOnInit(): void
-}
