@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
@@ -13,6 +13,13 @@ import { BirthdaySelectorComponent } from './birthday-selector/birthday-selector
 import { MenuFiltersComponent } from './menu-filters/menu-filters.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactFullViewComponent } from './contact-full-view/contact-full-view.component';
+
+const routes: Routes = [
+  { path: "list", component: ContactListComponent },
+  { path: "edit", component: ContactFormComponent },
+  { path: "details", component: ContactFullViewComponent },
+  { path: "", redirectTo: 'list', pathMatch: 'full' }
+]
 
 @NgModule({
   declarations: [
@@ -30,11 +37,7 @@ import { ContactFullViewComponent } from './contact-full-view/contact-full-view.
   ],
   imports: [
     BrowserModule,
-    // RouterModule.forRoot([
-    //   { path: "", component: ContactListComponent },
-    //   { path: "/edit", component: ContactFormComponent },
-    //   { path: "/details", component: ContactFullViewComponent }
-    // ])
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

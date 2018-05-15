@@ -1,0 +1,4 @@
+<section class="contacts">
+    <app-contact-card *ngFor="let cont of contacts" [contact]="cont" 
+                        (click)="selectContact($event)"></app-contact-card>
+</section>

@@ -1,0 +1,46 @@
+<aside class="sidebar">
+		<!-- Close mobile menu button -->
+		<button class="mobile-menu mobile-menu--close">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+				<path fill="currentColor" d="M28.941 31.786L.613 60.114c-.787.787-.787 2.062 0 2.849.393.394.909.59 1.424.59.516 0 1.031-.196 1.424-.59l28.541-28.541 28.541 28.541c.394.394.909.59 1.424.59.515 0 1.031-.196 1.424-.59.787-.787.787-2.062 0-2.849L35.064 31.786 63.41 3.438c.787-.787.787-2.062 0-2.849-.787-.786-2.062-.786-2.848 0L32.003 29.15 3.441.59C2.654-.196 1.38-.196.593.59c-.787.787-.787 2.062 0 2.849l28.348 28.347z"/>
+			</svg>
+		</button>
+		
+		<!-- Sidebar title -->
+		<h1 class="sidebar__title">{{title}}</h1>
+		
+		<!-- User section -->
+		<section class="user">
+			<div class="user__avatar"></div>
+
+			<section class="user__info">
+				<span class="user__name">Warhol Andy</span>
+				<button class="user__log-out">Log out</button>
+			</section>
+
+			<button class="user__menu">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612">
+					<path fill="currentColor" d="M55.636 250.364C24.907 250.364 0 275.27 0 306c0 30.73 24.907 55.636 55.636 55.636S111.273 336.73 111.273 306c0-30.73-24.907-55.636-55.637-55.636zm259.637 0c-30.73 0-55.636 24.907-55.636 55.636 0 30.729 24.907 55.636 55.636 55.636 30.729 0 55.636-24.905 55.636-55.636 0-30.73-24.906-55.636-55.636-55.636zm241.091 0c-30.73 0-55.636 24.907-55.636 55.636 0 30.729 24.906 55.636 55.636 55.636C587.093 361.636 612 336.73 612 306c0-30.73-24.907-55.636-55.636-55.636z"/>
+				</svg>
+			</button>
+		</section>
+		
+		<!-- Search -->
+		<app-search-contact></app-search-contact>
+
+		<!-- Side menu -->
+		<app-menu-filters></app-menu-filters>
+		
+		<!-- Create contact -->
+		<section class="create-contact">
+			<button class="create-contact__button">
+				<div class="create-contact__icon">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+						<path fill="currentColor" d="M42 20H22V0h-2v20H0v2h20v20h2V22h20z"/>
+					</svg>
+				</div>
+
+				<span class="create-contact__text">New Contact</span>
+			</button>
+		</section>
+	</aside>
