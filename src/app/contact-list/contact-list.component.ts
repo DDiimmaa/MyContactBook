@@ -13,14 +13,15 @@ export class ContactListComponent implements OnInit {
   selectedContact: Contact;
   test = "test";
   constructor() { 
-    // this.contacts.push(new Contact("Vasya","Magic"));
-    // this.contacts.push(new Contact("Dima","Petrov"));
-    // this.contacts.push(new Contact("Yura"," Fedorenko"));
-    // this.contacts.push(new Contact("Elon","Musk"));
+    this.contacts.push(new Contact("Vasya","Magic"));
+    this.contacts.push(new Contact("Dima","Petrov"));
+    this.contacts.push(new Contact("Yura"," Fedorenko"));
+    this.contacts.push(new Contact("Elon","Musk"));
+    
   }
 
   selectContactForEdit(contact: Contact){
-    debugger
+    
     this.selectContact.emit(contact);
   }
 
