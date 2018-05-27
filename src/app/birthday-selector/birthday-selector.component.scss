@@ -11,9 +11,9 @@
 		flex-shrink: 0;
 		height: $indXL;
 		padding: 0 $indM;
-		font-size: 16px;
+		font-size: $fontM;
 		text-align: left;
-		transition: color $mainTransition;
+		transition: color $transDuration;
 		color: fade-out($sideMenuTextClr, .5);
 
 		&:hover,
@@ -29,12 +29,12 @@
 	}
 
 	&__item-name {
-		@include truncate(100%);
+		@include truncate;
 	}
 
 	&__item-age,
 	&__item-date {
-		font-size: 12px;
+		font-size: $fontXS;
 	}
 }
 
@@ -62,12 +62,12 @@
 		flex-shrink: 0;
 		width: 100%;
 		padding: 0 $indM $indS;
-		font-size: 12px;
+		font-size: $fontXS;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 1.5px;
 		text-align: left;
-		transition: color $mainTransition;
+		transition: color $transDuration;
 		color: fade-out($sideMenuTextClr, .5);
 
 		&:hover,
@@ -75,5 +75,17 @@
 		.side-menu__item--active & {
 			color: $sideMenuBtnClr;
 		}
+	}
+}
+
+.items-box {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	overflow: auto;
+	display: none;
+
+	.side-menu__item--active & {
+		display: flex;
 	}
 }

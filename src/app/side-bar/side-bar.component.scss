@@ -12,7 +12,7 @@
 	flex-shrink: 0;
 	width: $sidebarWidth;
 	padding: $indM 0 0;
-	transition: transform $mainTransition;
+	transition: transform $transDuration;
 	background: linear-gradient(to bottom, $sidebarBgClr, lighten($sidebarBgClr, 20%));
 
 	@media ($mdDevice) {
@@ -44,11 +44,11 @@
 	}
 }
 
-.search-form {
-	flex-shrink: 0;
-	padding: 0 $indM;
-	margin-top: $indM;
-}
+// .search-form {
+// 	flex-shrink: 0;
+// 	padding: 0 $indM;
+// 	margin-top: $indM;
+// }
 
 .user {
 	@include userCard;
@@ -67,7 +67,7 @@
 	&__log-out {
 		font-size: $fontXS;
 		color: fade-out($sidebarTextClr, .5);
-		transition: color $mainTransition;
+		transition: color $transDuration;
 
 		&:hover,
 		&:focus {
@@ -107,6 +107,6 @@
 
 	&__text {
 		border-bottom: 1px solid transparent;
-		transition: border $mainTransition;
+		transition: border $transDuration;
 	}
 }

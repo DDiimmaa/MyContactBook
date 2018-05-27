@@ -10,6 +10,7 @@
 .contact-card {
 	@include userCard;
 	@include contactCardColumn(5);
+	position: relative;
 	margin: 0 $indM $indM 0;
 
 	@media (min-width: 1601px) {
@@ -57,7 +58,7 @@
 		}
 	}
 
-	@media (max-width: 450px) {
+	@media ($smDevice) {
 		@include contactCardColumn(1);
 		margin-right: 0;
 	}
@@ -65,7 +66,7 @@
 	&__btn {
 		display: flex;
 		align-items: center;
-		width: 100%;
+		flex-grow: 1;
 
 		&:hover,
 		&:focus {
@@ -81,22 +82,56 @@
 	}
 
 	&__avatar {
-		transition: border $mainTransition;
+		transition: border $transDuration;
 	}
 
 	&__name {
-		font-size: 16px;
+		font-size: $fontM;
 		color: $cardMainTextClr;
-		transition: color $mainTransition;
+		transition: color $transDuration;
 	}
 
 	&__description {
-		@include truncate(100%);
-		font-size: 12px;
+		@include truncate;
+		font-size: $fontXS;
 		color: $cardSecondTextClr;
 	}
 
-	&__menu {
+	&__menu-btn {
 		@include dotsMenu($cardSecondTextClr, $cardHoverClr);
 	}
+
+	&__menu {
+		position: absolute;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0 $indXS;
+		margin: 0;
+		border-radius: 5px;
+		background: rgba(36, 40, 62, 1);
+		color: white;
+	}
+
+	&__menu-item {
+		list-style: none;
+		min-width: 150px;
+		padding: $indXS 0;
+		font-size: $fontXS;
+		text-align: left;
+		color: white;
+		transition: color $transDuration;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid;
+		}
+
+		&:hover {
+			color: $cardHoverClr;
+		}
+	}
+}
+
+[hidden] { 
+	display: none !important;
 }

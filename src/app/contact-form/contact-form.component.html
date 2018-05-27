@@ -1,6 +1,7 @@
 <form class="contact-form">
     <section class="contact-form__wrapper">
-      <button class="contact-form__close-button">
+      <button class="contact-form__close-button"
+              routerLink="">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
           <path fill="currentColor" d="M42 20H22V0h-2v20H0v2h20v20h2V22h20z"/>
         </svg>
@@ -16,12 +17,14 @@
         <section class="contact-form__fields-wrapper">
           <label class="contact-form__label contact-form__label--half">
             <span class="contact-form__label-text">Name</span>
-            <input type="text" class="contact-form__input">
+            <input type="text" class="contact-form__input"
+                    [value]="contact.name"/>
           </label>
 
           <label class="contact-form__label contact-form__label--half">
             <span class="contact-form__label-text">Surname</span>
-            <input type="text" class="contact-form__input">
+            <input type="text" class="contact-form__input"
+                    [value]="contact.surname"/>
           </label>
           
           <label class="contact-form__label">

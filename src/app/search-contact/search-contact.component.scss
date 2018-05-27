@@ -1,10 +1,16 @@
 @import "../../assets/variables.scss";
 @import "../../assets/mixins.scss";
 
-.search-form {
+:host(app-search-contact) { 
 	flex-shrink: 0;
 	padding: 0 $indM;
 	margin-top: $indM;
+}
+
+.search-form {
+	// flex-shrink: 0;
+	// padding: 0 $indM;
+	// margin-top: $indM;
 }
 
 .search {
@@ -15,7 +21,7 @@
 		height: $indL;
 		padding-right: $indL;
 		border-bottom: 1px solid fade-out($searchTextClr, .5);
-		transition: border-color $mainTransition;
+		transition: border-color $transDuration;
 
 		&:focus {
 			border-bottom-color: $searchTextClr;
@@ -36,9 +42,7 @@
 		align-items: center;
 		width: $indL;
 		height: $indL;
-		cursor: pointer;
 		color: fade-out($searchTextClr, .5);
-		outline: 0;
 
 		&:hover,
 		&:focus {
@@ -51,7 +55,7 @@
 		}
 
 		path {
-			transition: $mainTransition;
+			transition: $transDuration;
 		}
 	}
 }

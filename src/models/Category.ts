@@ -1,6 +1,6 @@
-const Category = {
-    Undefined: 0,
-    Family: 1,
-    Friends: 2,
-    Work: 3,
+export class Category {
+    constructor(
+        public id: number,
+        public displayName: string) { 
+    }
 }
