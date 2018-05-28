@@ -82,7 +82,7 @@
 	flex-direction: column;
 	flex-grow: 1;
 	overflow: auto;
-	display: none;
+	// display: none;
 
 	.side-menu__item--active & {
 		display: flex;

@@ -14,7 +14,7 @@ export class ContactFormComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    const contactId = +this.activatedRoute.snapshot.paramMap.get('id');
+    const contactId = this.activatedRoute.snapshot.paramMap.get('id');
     this.contact = this.contactsService.getContactById(contactId);
   }
 

@@ -24,7 +24,7 @@ export class ContactFullViewComponent implements OnInit {
     //     this.contact = this.contactsService.getContactById(contactId);
     //     //console.log(userId);
     //   });
-    const contactId = +this.activatedRoute.snapshot.paramMap.get('id');
+    const contactId = this.activatedRoute.snapshot.paramMap.get('id');
     this.contact = this.contactsService.getContactById(contactId);
   }
 
