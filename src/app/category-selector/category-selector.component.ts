@@ -15,9 +15,7 @@ export class CategorySelectorComponent implements OnInit {
   ngOnInit() {
     this.categories = this.contactsService.categories;
   }
-
-  showCategoryContacts(categoryId: number){
-    console.log(categoryId)
-    this.contactsService.filterContactsByCategoryId(categoryId);
+  showCategoryContacts(id: number){
+    this.contactsService.filterContactsByCategoryId(id);
   }
 }

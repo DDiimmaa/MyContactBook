@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contact }     from '../../models/Contact';
 import { ContactsService } from '../services/contacts.service';
 
@@ -6,19 +6,24 @@ import { ContactsService } from '../services/contacts.service';
   selector: 'app-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactListComponent implements OnInit {
-  contacts: Contact[] = this.contactService.filteredContacts;
+  contacts: Contact[];
   
-  selectedContact: Contact;
-  
-  constructor(private contactService: ContactsService) { 
-    //debugger
-    //this.contacts = contactService.filteredContacts;
+  constructor(private contactsService: ContactsService) { 
   }
 
   ngOnInit() {
+    this.getContactsByCategory(this.contactsService.selectedCategory);
+
+    this.contactsService.categoryChanged.subscribe(cat => {
+      this.getContactsByCategory(cat)
+    });
+  }
+
+  getContactsByCategory(catId: number){
+      this.contacts = this.contactsService.allContacts
+        .filter(cont => catId === undefined || catId === 0 || cont.category === catId);
   }
 
 }

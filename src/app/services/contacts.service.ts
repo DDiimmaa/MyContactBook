@@ -1,15 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Contact }     from '../../models/Contact';
 import { Category } from '../../models/Category';
+import { Observable, of } from 'rxjs';
+import { Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
   allContacts: Contact[] = [];
-  filteredContacts: Contact[] = [];
+  //filteredContacts: Contact[] = [];
   categories: Category[] = [];
   selectedContact: Contact = undefined;
+  selectedCategory: number = 0;
+
+  @Output() categoryChanged: EventEmitter<number> = new EventEmitter();
 
   constructor() { 
     this.allContacts.push(new Contact("Kobe","Bryant",2));
@@ -35,8 +40,11 @@ export class ContactsService {
   }
 
   filterContactsByCategoryId(id: number){
-    debugger
-    this.filteredContacts = this.allContacts
-                              .filter(cont => id === undefined || id === 0 || cont.category === id);
+    this.selectedCategory = id;
+    this.categoryChanged.emit(this.selectedCategory);
   }
+
+  // getFilteredContacts(): Observable<Contact[]> {
+  //   return of(this.filteredContacts);
+  // }
 }
