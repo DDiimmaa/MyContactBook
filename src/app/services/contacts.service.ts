@@ -17,6 +17,12 @@ export class ContactsService {
   @Output() categoryChanged: EventEmitter<number> = new EventEmitter();
 
   constructor() { 
+    this.allContacts.push = function (){
+      arguments[0].id = arguments[0].generateGuid();
+      //Do what you want here...
+      return Array.prototype.push.apply(this,arguments);
+    }
+
     this.allContacts.push(new Contact("Kobe","Bryant",2));
     this.allContacts.push(new Contact("Dima","Petrov",1));
     this.allContacts.push(new Contact("Yura"," Fedorenko"));
@@ -44,7 +50,13 @@ export class ContactsService {
     this.categoryChanged.emit(this.selectedCategory);
   }
 
-  // getFilteredContacts(): Observable<Contact[]> {
-  //   return of(this.filteredContacts);
-  // }
+  addContact(contact: Contact){
+    this.allContacts.push(contact);
+  }
+
+  updateContact(contact: Contact){
+    let c = this.getContactById(contact.id);
+    c.name = contact.name;
+    c.surname = contact.surname;
+  }
 }

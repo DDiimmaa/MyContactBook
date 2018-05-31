@@ -22,8 +22,10 @@ export class ContactListComponent implements OnInit {
   }
 
   getContactsByCategory(catId: number){
+
       this.contacts = this.contactsService.allContacts
         .filter(cont => catId === undefined || catId === 0 || cont.category === catId);
+        console.log(this.contacts);
   }
 
 }

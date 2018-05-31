@@ -14,10 +14,12 @@ import { MenuFiltersComponent } from './menu-filters/menu-filters.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactFullViewComponent } from './contact-full-view/contact-full-view.component';
 import { ContactsService } from './services/contacts.service';
+import { CreateContactComponent } from './create-contact/create-contact.component';
 
 const routes: Routes = [
   { path: "list", component: ContactListComponent },
   { path: "edit/:id", component: ContactFormComponent },
+  { path: "create", component: ContactFormComponent },
   { path: "details/:id", component: ContactFullViewComponent },
   { path: "", redirectTo: 'list', pathMatch: 'full' }
 ]
@@ -34,7 +36,8 @@ const routes: Routes = [
     BirthdaySelectorComponent,
     MenuFiltersComponent,
     ContactFormComponent,
-    ContactFullViewComponent
+    ContactFullViewComponent,
+    CreateContactComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,6 @@ export class Contact {
         public instagramLink: string = "",
         public facebookLink: string = "",
         public image: string = "") { 
-            this.id = this.generateGuid();
     }
 
     getFullname(){

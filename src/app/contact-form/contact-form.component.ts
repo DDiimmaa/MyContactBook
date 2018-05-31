@@ -15,7 +15,21 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     const contactId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.contact = this.contactsService.getContactById(contactId);
+    if(contactId){
+      this.contact = this.contactsService.getContactById(contactId);
+    }
+    else{
+      this.contact = new Contact("","");
+    }
+    console.log("contactId: " + contactId);
   }
 
+  saveChanges(){
+    if(this.contact.id === undefined || this.contact.id.trim() === ""){
+      this.contactsService.addContact(this.contact);
+    }
+    else{
+      this.contactsService.updateContact(this.contact);
+    }
+  }
 }
