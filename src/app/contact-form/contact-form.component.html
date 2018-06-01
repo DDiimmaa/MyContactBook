@@ -18,22 +18,37 @@
           <label class="contact-form__label contact-form__label--half">
             <span class="contact-form__label-text">Name</span>
             <input type="text" class="contact-form__input"
-                    [value]="contact.name"/>
+                    name="name"
+                    [(ngModel)]="contact.name"/>
           </label>
 
           <label class="contact-form__label contact-form__label--half">
             <span class="contact-form__label-text">Surname</span>
             <input type="text" class="contact-form__input"
-                    [value]="contact.surname"/>
+                    name="surname"
+                    [(ngModel)]="contact.surname"/>
           </label>
           
           <label class="contact-form__label">
             <span class="contact-form__label-text">Description</span>
-            <textarea class="contact-form__textarea" rows="2"></textarea>
+            <textarea class="contact-form__textarea" rows="2"
+                      name="description"
+                      [(ngModel)]="contact.description"></textarea>
           </label>
         </section>
       </section>
 
+      <label class="contact-form__label">
+          <span class="contact-form__label-text">Category</span>
+          <select class="form-control"
+                required
+                [(ngModel)]="contact.category" name="category">
+            <option *ngFor="let cat of categories" 
+                    [ngValue]="cat.id">
+              {{cat.displayName}}
+            </option>
+          </select>
+      </label>
       <label class="contact-form__label">
         <span class="contact-form__label-text">Phone</span>
         <input type="tel" class="contact-form__input">
@@ -63,10 +78,11 @@
     
     <div class="contact-form__buttons-box">
       <button class="contact-form__button contact-form__button--main"
-              (click)="saveChanges()">
+              (click)="saveChanges();$event.preventDefault()">
         Save changes
       </button>
-      <button class="contact-form__button contact-form__button--second">
+      <button class="contact-form__button contact-form__button--second"
+              (click)="deleteContact();$event.preventDefault()">
         Delete contact
       </button>
     </div>
